@@ -38,8 +38,10 @@ def learning_lists():
     list1.append('justo')
     list1.append(list2)
     try:
-        ','.join(list1)
-    except AttributeError:
+        print('{0} this is the list and might not have an attribute!'.format(list1))
+        '.'.join(list1)
+
+    except TypeError:
         print('Hio object list haina hio attribute!')
     print(f"Here is the new list formed: {list1}")
 
@@ -66,22 +68,27 @@ def interest_rate():
     comp_interv = input("Enter compounding intervals: ")
     print("Compounding frequency")
     interview_schedule()  # indicates function call in order to get parse compounding intervals
+
     if comp_interv == "H":
         comp_fn = hour
         hour = input("Compound every X Hours: ")
         print(comp_fn, " going for ", hour)
+
     elif comp_interv == "D":
         comp_fn = day
         day = input("Compound every X Days: ")
         print(comp_fn, "going for", day)
+
     elif comp_interv == "W":
         comp_fn = week
         week = input("Compound every X Weeks: ")
         print(comp_fn, week)
+
     elif comp_interv == "M":
         comp_fn = month
         month = input("Compound every X Months: ")
         print(comp_fn, "going for", month)
+
     elif comp_interv == "Y":
         comp_fn = year
         year = input("Compound every X Years: ")
@@ -94,6 +101,7 @@ def interest_rate():
 def kenyans_on_discord():
     print('Announcements made on kenyans on discord server are passed here!')
     k_o_d = ['D3stinn3', 'Kiama_muu', 'others']
+
     if k_o_d[1] == 'Kiama_muu':
         k_o_d.append('lost people')
         k_o_d.insert(2, 'Maria')
@@ -295,3 +303,27 @@ def list_and_dict():
 
 fun_with_dictionaries()
 list_and_dict()
+
+
+def dict_formation():
+    first_dict = {'name': 'Destinne', 'age': 25}
+    second_dict = dict(name='Destinne', age=25)
+    third_dict = dict.fromkeys(['name', 'age'])
+    forth_dict = {x: y for (x, y) in zip(['name', 'age'], ['Destinne', 25])}
+
+    while True:
+        if first_dict.keys() != third_dict.items():
+            print('they are the same...')
+        else:
+            print('they are not the same...')
+        if  first_dict.values() != forth_dict.values():
+            print('they are also the same!')
+        else:
+            print('they are also not the same!')
+        break
+    second_dict['age'] = 26
+    forth_dict['name'] = 'Wajackoyah'
+    print(second_dict)
+    print(forth_dict)
+
+dict_formation()
