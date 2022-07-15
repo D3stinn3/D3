@@ -1,4 +1,5 @@
 import random
+import operator
 
 
 class devops:
@@ -327,3 +328,15 @@ def dict_formation():
     print(forth_dict)
 
 dict_formation()
+
+def dict_in_calc():
+    action = {
+        '+': operator.add,
+        '-': operator.sub,
+        '/': operator.truediv,
+        '**': operator.pow
+        }
+
+    print(action['**'](6, 2))
+
+dict_in_calc()
